@@ -4,14 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin Flip Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Coin Flip Game</h1>
-    <button id="connect-wallet">Connect Wallet</button>
-    <div id="wallet-info"></div>
-    <input type="number" id="bet-amount" placeholder="Enter amount">
-    <button id="heads">Heads</button>
-    <button id="tails">Tails</button>
-    <div id="result"></div>
+    <div class="container">
+        <h1>Heads or Tails</h1>
+        <p>Flip a virtual coin and bet your tokens!</p>
+
+        <!-- Wallet Connection -->
+        <button id="connect-wallet">Connect Wallet</button>
+        <div id="wallet-info"></div>
+
+        <!-- Betting Amount -->
+        <input type="number" id="bet-amount" placeholder="Enter bet amount" min="0.01" step="0.01">
+        <div class="bet-container">
+            <label for="tokenSelect">Select Token:</label>
+            <select id="tokenSelect">
+                <option value="SOL">SOL</option>
+                <option value="ETH">ETH</option>
+                <option value="BTC">BTC</option>
+            </select>
+        </div>
+        <!-- Choose Side -->
+        <div class="side-container">
+            <label for="selectedSide">Choose your side:</label>
+            <select id="selectedSide">
+                <option value="heads">Heads</option>
+                <option value="tails">Tails</option>
+            </select>
+        </div>
+
+        <!-- Coin Flip Result -->
+        <div class="result" id="result">HEADS</div>
+        <button id="flipButton" onclick="flipCoin()">Flip the coin!</button>
+
+        <!-- Counters for Heads and Tails -->
+        <div class="counter">
+            <p>Heads: <span id="headsCount">0</span></p>
+            <p>Tails: <span id="tailsCount">0</span></p>
+        </div>
+        <p id="outcomeMessage"></p>
+    </div>
+    <div id="confetti-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script> <!-- For Ethereum/Polygon -->
+    <script src="script.js"></script>
 </body>
 </html>
