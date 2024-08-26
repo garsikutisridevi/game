@@ -1,49 +1,65 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    margin: 0;
+    overflow: hidden; /* Prevent page scrolling */
+}
+
+/* Page Layout */
+.page-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    justify-content: center;
 }
 
-.container {
-    text-align: center;
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 500px; /* Added to control width */
-    height: auto; /* Allow height to adjust based on content */
-    margin: auto; /* Center the container */
-}
-
-h1 {
+.heading {
     font-size: 36px;
     color: #333;
+    margin: 0;
+    text-align: center;
 }
 
-p {
-    color: #666;
-}
-
-.result {
-    margin: 20px auto;
-    font-size: 40px;
-    color: white;
-    background-color: #d63384;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+.main-container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    height: 600px;
+}
+
+/* Container Styles */
+.left-container, .right-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    height: 100%;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.5s;
 }
 
+.right-container {
+    display: flex; /* Show right container */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Styles */
 button {
-    background-color: #d63384;
+    background-color: #90EE90;
     color: white;
     padding: 10px 20px;
     font-size: 18px;
@@ -55,22 +71,29 @@ button {
 }
 
 button:hover {
-    background-color: #c2186b;
+    background-color: #76c17d;
 }
 
 button:active {
     transform: scale(0.95);
 }
 
-.counter {
-    margin-top: 20px;
+/* Result Styles */
+.result {
+    margin: 20px auto;
+    font-size: 40px;
+    color: white;
+    background-color: #90EE90;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
 }
 
-.counter p {
-    font-size: 18px;
-    color: #333;
-}
-
+/* Input and Select Styles */
 input[type="number"] {
     padding: 10px;
     font-size: 18px;
@@ -80,8 +103,11 @@ input[type="number"] {
     text-align: center;
 }
 
-.side-container {
-    margin: 20px 0;
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 label {
@@ -90,12 +116,7 @@ label {
     margin-right: 10px;
 }
 
-select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+/* Confetti Animation */
 #confetti-container {
     position: fixed;
     top: 0;
@@ -111,7 +132,7 @@ select {
     position: absolute;
     width: 5px;
     height: 10px;
-    background-color: red; 
+    background-color: red;
     opacity: 0.5;
     animation: fall linear infinite;
 }
@@ -125,7 +146,6 @@ select {
     }
 }
 
-/* Additional styles to enhance the effect */
 .confetti:nth-child(odd) {
     animation-duration: 3s;
 }

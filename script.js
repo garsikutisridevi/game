@@ -113,3 +113,8 @@ const handleLoss = (betAmount) => {
 
 // Event listeners for buttons
 document.getElementById('connect-wallet').addEventListener('click', connectWallet);
+document.getElementById('connect-wallet').addEventListener('click', function() {
+    // Add logic to connect wallet
+    alert('Wallet connected!');
+});
+
